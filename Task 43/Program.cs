@@ -14,7 +14,7 @@ Console.Write("Введите значение k2: ");
 double k2 = Convert.ToDouble(Console.ReadLine());
 double x, y;
 
-void intersection(double k1, double b1, double k2z, double b2)
+void intersection(double k1, double b1, double k2, double b2)
 {
     if (k1 == k2 && b1 == b2) Console.WriteLine("Прямые совпадают");
     else if (k1 == k2) Console.WriteLine("Прямые параллельны (не пересекаются)");
