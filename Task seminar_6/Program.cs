@@ -40,6 +40,12 @@ Console.WriteLine();
 int[,] new_matrix = new int[rows, colums];
 for (int i = 0; i < new_matrix.GetLength(0); i++)
 {
+    if (new_matrix.GetLength(0) == 1)
+        {
+            new_matrix[0, 0] = matrix[0, 0] * 4;
+            Console.Write($"{new_matrix[0, 0]} ");
+            break;
+        }
     for (int j = 0; j < new_matrix.GetLength(1); j++)
     {
         if (i == 0 && j == 0) new_matrix[i, j] = matrix[new_matrix.GetLength(0) - 1, j] + matrix[i+1, j] + matrix[i, new_matrix.GetLength(0) - 1] + matrix[i, j+1];
@@ -51,6 +57,7 @@ for (int i = 0; i < new_matrix.GetLength(0); i++)
         if (i == new_matrix.GetLength(0)-1 && j == new_matrix.GetLength(0)-1) new_matrix[i, j] = matrix[i-1, j] + matrix[i, 0] + matrix[0, new_matrix.GetLength(0)-1] + matrix[i, j - 1];
         if (i > 0 && i < new_matrix.GetLength(0)-1 && j > 0 && j < new_matrix.GetLength(0)-1) new_matrix[i, j] = matrix[i - 1, j] + matrix[i, j + 1] + matrix[i+1, j] + matrix[i, j - 1];
         if (i > 0 && i < new_matrix.GetLength(0)-1 && j == new_matrix.GetLength(0)-1) new_matrix[i, j] = matrix[i-1, j] + matrix[i, 0] + matrix[i + 1, j] + matrix[i, j-1];
+        
         Console.Write($"{new_matrix[i, j]} ");
         
     }
